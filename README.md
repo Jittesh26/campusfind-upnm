@@ -441,23 +441,13 @@ http://localhost/campusfind/
 
 ## 📸 Screenshots & Demo
 
-Screenshots can be added to showcase the main CampusFind interfaces and workflows.
+### Landing Page
 
-Suggested screenshots include:
+![CampusFind Landing Page — Part 1](screenshots/landing-page-1.png)
 
-* Landing Page
-* Login Page
-* Student Dashboard
-* Lost Item Reporting
-* Found Item Reporting
-* Interactive Campus Map
-* AI Match Results
-* Verification Gatekeeper
-* Anonymous Chat
-* Campus Tag QR
-* Handover Process
-* Administrative Dashboard
-* Analytics
+![CampusFind Landing Page — Part 2](screenshots/landing-page-2.png)
+
+![CampusFind Landing Page — Part 3](screenshots/landing-page-3.png)
 
 ---
 
