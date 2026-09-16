@@ -449,6 +449,40 @@ http://localhost/campusfind/
 
 ![CampusFind Landing Page — Part 3](screenshots/landing-page-3.png)
 
+### Student Dashboard
+
+![CampusFind Student Dashboard](screenshots/dashboard.png)
+
+### Report Lost Item
+
+![CampusFind Report Lost Item — Part 1](screenshots/report-lost-1.png)
+
+![CampusFind Report Lost Item — Part 2](screenshots/report-lost-2.png)
+
+### Report Found Item
+
+![CampusFind Report Found Item — Part 1](screenshots/report-found-1.png)
+
+![CampusFind Report Found Item — Part 2](screenshots/report-found-2.png)
+
+### AI-Assisted Matching
+
+![CampusFind AI Matching — Part 1](screenshots/ai-matching-1.png)
+
+![CampusFind AI Matching — Part 2](screenshots/ai-matching-2.png)
+
+### Interactive Campus Map
+
+![CampusFind Interactive Campus Map](screenshots/map.png)
+
+### Verification & Handover
+
+![CampusFind Verification & Handover](screenshots/VerificationHandover.png)
+
+### Administrative Dashboard
+
+![CampusFind Administrative Dashboard](screenshots/Admin-Dashboard.png)
+
 ---
 
 ## 🔮 Future Improvements
