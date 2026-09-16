@@ -1,0 +1,18 @@
+# Configuration / Secrets
+config.env.php
+.env
+*.env
+
+# User Uploaded Files
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+error_log
+
+# OS generated
+.DS_Store
+Thumbs.db
+# Local database testing utility
+db_check.php

@@ -1,0 +1,619 @@
+/* ============================================================
+   CAMPUSFIND – MASTER DESIGN SYSTEM (LOGIN, DASHBOARD & CHAT)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-dark: #0F172A;
+    --surface: #1E293B;
+    --primary: #4F46E5;
+    --secondary: #06B6D4;
+    --ai-gradient: linear-gradient(135deg, #4F46E5, #06B6D4);
+}
+
+/* ===== GLOBAL DARK BASE OVERRIDES ===== */
+html, body {
+    background-color: #0F172A !important;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%) fixed !important;
+    color: #F8FAFC !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== BACKGROUND ORBS & FLOATING CIRCLES ===== */
+.bg-circle {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.08;
+}
+.bg-circle-1 { width: 600px; height: 600px; top: -200px; right: -200px; background: radial-gradient(circle, #6366F1, transparent 70%); }
+.bg-circle-2 { width: 500px; height: 500px; bottom: -150px; left: -150px; background: radial-gradient(circle, #06B6D4, transparent 70%); }
+.bg-circle-3 { width: 400px; height: 400px; top: 40%; left: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle, #3B82F6, transparent 70%); }
+
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+}
+.orb-1 { width: 450px; height: 450px; background: #6366F1; top: -100px; right: -100px; }
+.orb-2 { width: 350px; height: 350px; background: #10B981; bottom: -50px; left: -50px; }
+.orb-3 { width: 250px; height: 250px; background: #EF4444; top: 40%; left: 45%; }
+
+
+/* ============================================================
+   🔐 LOGIN / REGISTER PAGE STYLES
+   ============================================================ */
+
+.login-page, .register-page {
+    background-color: #0F172A !important;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%) fixed !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.login-wrapper, .register-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card, .register-card {
+    max-width: 420px;
+    width: 100%;
+    padding: 40px 32px;
+    background: rgba(30, 41, 59, 0.75) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    animation: cardSlideUp 0.6s ease forwards;
+}
+
+@keyframes cardSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo & Branding */
+.login-logo, .register-logo {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo-wrapper {
+    display: inline-block;
+    background: linear-gradient(135deg, #4F46E5, #06B6D4);
+    padding: 20px;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.logo-icon {
+    font-size: 2.8rem;
+    color: white;
+}
+
+.brand-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: white !important;
+    margin: 12px 0 4px;
+    letter-spacing: -0.02em;
+}
+
+.brand-title span {
+    background: linear-gradient(135deg, #818CF8, #34D399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-subtitle {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #94A3B8 !important;
+    margin: 0;
+}
+
+.brand-motto {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-top: 2px;
+}
+
+/* Inputs & Form Groups */
+.input-group-custom {
+    position: relative;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.input-group-custom .form-control {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 14px !important;
+    padding: 16px 16px 16px 52px !important;
+    color: #FFFFFF !important;
+    font-size: 0.95rem;
+    height: 54px !important;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.input-group-custom .form-control:focus {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: #6366F1 !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15) !important;
+    outline: none;
+}
+
+.input-group-custom .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.input-group-custom .input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 1.2rem;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.input-group-custom .password-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 5;
+}
+
+.input-group-custom .password-toggle:hover {
+    color: #FFFFFF;
+}
+
+/* FIX CHROME YELLOW AUTOFILL BUG */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #FFFFFF !important;
+    -webkit-box-shadow: 0 0 0px 1000px #1E293B inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    border-radius: 14px;
+}
+
+/* Gradient Button */
+.gradient-btn, .btn-login, .btn-register {
+    background: linear-gradient(135deg, #4F46E5, #06B6D4) !important;
+    border: none !important;
+    border-radius: 14px !important;
+    padding: 14px !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    color: #FFFFFF !important;
+    height: 56px !important;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.gradient-btn:hover, .btn-login:hover, .btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.5);
+    color: #FFFFFF !important;
+}
+
+.text-muted-bright {
+    color: rgba(255, 255, 255, 0.75) !important;
+    text-decoration: none;
+}
+
+.text-muted-bright:hover {
+    color: #FFFFFF !important;
+}
+
+
+/* ============================================================
+   📊 DASHBOARD & APP INTERFACE STYLES
+   ============================================================ */
+
+/* Top Glass Navbar */
+.navbar-custom {
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 12px 0;
+    z-index: 1030;
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #FFFFFF !important;
+}
+
+.navbar-custom .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 8px 16px !important;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-container { 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 24px 20px 60px; 
+    position: relative; 
+    z-index: 1; 
+}
+
+.hero-section { margin-bottom: 28px; }
+
+.hero-title { 
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    color: #FFFFFF !important; 
+    letter-spacing: -0.02em; 
+}
+
+.hero-title .gradient-text { 
+    background: linear-gradient(135deg, #818CF8, #34D399); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.hero-tagline { 
+    font-size: 1.05rem; 
+    font-weight: 600; 
+    color: #CBD5E1 !important; 
+    margin-bottom: 4px; 
+}
+
+.hero-description { 
+    color: rgba(255, 255, 255, 0.65) !important; 
+    max-width: 520px; 
+    font-size: 0.95rem; 
+}
+
+/* KPI Grid */
+.kpi-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 18px; 
+    margin-bottom: 24px; 
+}
+
+.kpi-card { 
+    background: rgba(30, 41, 59, 0.75) !important; 
+    backdrop-filter: blur(16px);
+    border-radius: 16px; 
+    padding: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+    position: relative; 
+    overflow: hidden; 
+    transition: all 0.3s ease; 
+}
+
+.kpi-card::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; right: 0; 
+    height: 3px; 
+    background: linear-gradient(135deg, #4F46E5, #06B6D4); 
+}
+
+.kpi-card:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4); 
+    border-color: rgba(255, 255, 255, 0.2) !important; 
+}
+
+.kpi-card .kpi-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+.kpi-card .kpi-value { font-size: 2.2rem; font-weight: 700; color: #FFFFFF !important; line-height: 1.1; }
+.kpi-card .kpi-label { color: rgba(255, 255, 255, 0.7) !important; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+.kpi-card .kpi-sub { color: rgba(255, 255, 255, 0.5) !important; font-size: 0.75rem; margin-top: 2px; }
+
+/* Glass Cards */
+.glass-card {
+    background: rgba(30, 41, 59, 0.75) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: #FFFFFF !important;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Quick Actions */
+.quick-actions-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 14px; 
+    flex: 1; 
+}
+
+.quick-action-card {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-radius: 16px;
+    padding: 18px 16px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    transition: all 0.25s ease;
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quick-action-card:hover { 
+    background: rgba(255, 255, 255, 0.08) !important; 
+    border-color: #6366F1 !important; 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
+}
+
+.quick-action-card .qa-icon { 
+    font-size: 1.6rem; 
+    margin-bottom: 10px; 
+    display: block; 
+}
+
+.quick-action-card .qa-title { 
+    display: block !important; 
+    font-weight: 700; 
+    font-size: 0.95rem; 
+    color: #FFFFFF !important; 
+    margin-bottom: 4px;
+}
+
+.quick-action-card .qa-sub { 
+    display: block !important; 
+    font-size: 0.78rem; 
+    color: rgba(255, 255, 255, 0.75) !important; 
+    line-height: 1.35;
+}
+
+.quick-action-card .qa-arrow { 
+    margin-left: auto; 
+    font-size: 1.1rem; 
+    color: rgba(255, 255, 255, 0.4); 
+    transition: transform 0.2s, color 0.2s; 
+    margin-top: 10px; 
+}
+
+.quick-action-card:hover .qa-arrow { 
+    transform: translateX(4px); 
+    color: #A5B4FC; 
+}
+
+/* AI Assistant Card */
+.ai-empty-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.ai-empty-wrapper .ai-icon { 
+    font-size: 2.8rem; 
+    opacity: 0.6; 
+    color: #8B5CF6; 
+    margin-bottom: 12px; 
+}
+
+.ai-empty-wrapper p { 
+    color: #FFFFFF !important; 
+    font-size: 0.92rem; 
+    margin-bottom: 6px; 
+    font-weight: 600; 
+}
+
+.ai-empty-wrapper .ai-features { 
+    font-size: 0.8rem; 
+    color: rgba(255, 255, 255, 0.65) !important; 
+    margin-bottom: 10px; 
+}
+
+.ai-empty-wrapper small {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 600;
+}
+
+/* Map Preview */
+#mapPreview { 
+    height: 175px; 
+    border-radius: 14px; 
+    border: 1px solid rgba(255, 255, 255, 0.12); 
+    margin-top: 4px; 
+    flex: 1; 
+    min-height: 160px; 
+}
+
+.map-info { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 12px; 
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Scroll Lists */
+.reports-scroll, .timeline-scroll {
+    height: 320px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.report-item-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: #FFFFFF !important;
+    border: 1px solid transparent;
+    margin-bottom: 6px;
+}
+
+.report-item-link:hover { 
+    background: rgba(255, 255, 255, 0.06); 
+    border-color: rgba(255, 255, 255, 0.1); 
+    transform: translateX(4px); 
+}
+
+
+/* ============================================================
+   💬 CHAT & MESSAGING INTERFACE OVERRIDES
+   ============================================================ */
+
+/* Chat Messages Flex Container Fix */
+#chatMessages {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+}
+
+#chatMessages .msg {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    margin-bottom: 6px !important;
+    clear: both !important;
+}
+
+/* PURPLE BUBBLES - YOUR SENT MESSAGES (RIGHT ALIGNED) */
+#chatMessages .msg-self {
+    align-items: flex-end !important;
+    text-align: right !important;
+}
+
+#chatMessages .msg-self .msg-bubble {
+    background: linear-gradient(135deg, #6366F1, #4F46E5) !important;
+    color: #FFFFFF !important;
+    border-radius: 18px 18px 2px 18px !important;
+    padding: 10px 16px !important;
+    max-width: 75% !important;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35) !important;
+    display: inline-block !important;
+}
+
+#chatMessages .msg-self .msg-time {
+    text-align: right !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 0.72rem !important;
+    margin-top: 4px !important;
+}
+
+/* GRAY BUBBLES - RECEIVED MESSAGES (LEFT ALIGNED) */
+#chatMessages .msg-other {
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+#chatMessages .msg-other .msg-bubble {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #FFFFFF !important;
+    border-radius: 18px 18px 18px 2px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 10px 16px !important;
+    max-width: 75% !important;
+    display: inline-block !important;
+}
+
+#chatMessages .msg-other .msg-time {
+    text-align: left !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 0.72rem !important;
+    margin-top: 4px !important;
+}
+
+/* Finder Selection List Container */
+.finder-list { 
+    max-height: 320px; 
+    overflow-y: auto; 
+}
+
+.finder-item { 
+    background: rgba(255, 255, 255, 0.04); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    border-radius: 12px; 
+    padding: 14px 18px; 
+    margin-bottom: 10px; 
+    transition: all 0.2s ease; 
+    cursor: pointer; 
+}
+
+.finder-item:hover { 
+    background: rgba(255, 255, 255, 0.08); 
+    border-color: #6366F1; 
+    transform: translateX(4px); 
+}
+
+
+/* ============================================================
+   📱 RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+@media (max-width: 992px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-title { font-size: 2rem; }
+}
+
+@media (max-width: 576px) {
+    .kpi-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .quick-actions-grid { grid-template-columns: 1fr 1fr; }
+    .login-card, .register-card { padding: 32px 20px; }
+}
